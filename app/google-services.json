@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "898488119526",
+    "firebase_url": "https://fir-studentapp-47488.firebaseio.com",
+    "project_id": "fir-studentapp-47488",
+    "storage_bucket": "fir-studentapp-47488.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898488119526:android:230f0f3a700b7bc1",
+        "android_client_info": {
+          "package_name": "sg.edu.rp.c346.firebaseinventoryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898488119526-8tqk3fg3hgnu79uobh0brthj9ddt6jms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArZpWZ7r5lKz0ExvLQCSZdbXZ3G3Iu5C0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898488119526-8tqk3fg3hgnu79uobh0brthj9ddt6jms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898488119526:android:db5fa3a8ba675e67",
+        "android_client_info": {
+          "package_name": "sg.edu.rp.c346.firebasestudentapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898488119526-8tqk3fg3hgnu79uobh0brthj9ddt6jms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArZpWZ7r5lKz0ExvLQCSZdbXZ3G3Iu5C0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898488119526-8tqk3fg3hgnu79uobh0brthj9ddt6jms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898488119526:android:e7cd5c8fe0ccba20",
+        "android_client_info": {
+          "package_name": "sg.edu.rp.c346.p12webservice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898488119526-8tqk3fg3hgnu79uobh0brthj9ddt6jms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArZpWZ7r5lKz0ExvLQCSZdbXZ3G3Iu5C0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898488119526-8tqk3fg3hgnu79uobh0brthj9ddt6jms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/upload"
+        android:title="Upload to Firebase" />
+    <item android:id="@+id/viewAllIncidents"
+        android:title="View all incidents" />
+</menu>
