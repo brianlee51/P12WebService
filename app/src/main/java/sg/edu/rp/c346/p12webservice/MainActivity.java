@@ -6,7 +6,10 @@ import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -144,4 +147,33 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    protected void onResume() {
+        super.onResume();
+        alIncident = new ArrayList<Incident>();
+        client = new AsyncHttpClient();
+        client.addHeader("AccountKey", "cYsiznKuReChgmNVjkun9Q==");
+        client.get("http://datamall2.mytransport.sg/ltaodataservice/TrafficIncidents", new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONArray jsonArray = response.getJSONArray("value");
+                    for (int i=0; i<jsonArray.length(); i++) {
+                        JSONObject jsonObj = jsonArray.getJSONObject(i);
+                        String type = jsonObj.getString("Type");
+                        double latitude = jsonObj.getDouble("Latitude");
+                        double longitude =  jsonObj.getDouble("Longitude");
+                        String message = jsonObj.getString("Message");
+                        Incident incident = new Incident(type, latitude, longitude, message, date);
+                        alIncident.add(incident);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                aaIncident = new IncidentAdapter(getApplicationContext(), R.layout.row, alIncident);
+                lvIncidents.setAdapter(aaIncident);
+            }
+        });
+    }
 }
+

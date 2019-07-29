@@ -14,6 +14,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -26,7 +27,6 @@ public class AllMapsActivity extends FragmentActivity implements OnMapReadyCallb
 
     private GoogleMap mMap;
     private FirebaseFirestore db;
-    ArrayList<Incident> alIncident = new ArrayList<Incident>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +60,11 @@ public class AllMapsActivity extends FragmentActivity implements OnMapReadyCallb
                     if (doc.get("type") != null) {
                         Incident incident = doc.toObject(Incident.class);
                         incident.setId(doc.getId());
-                        alIncident.add(incident);
+                        LatLng newMarker = new LatLng(incident.getLatitude(), incident.getLongitude());
+                        mMap.addMarker(new MarkerOptions().position(newMarker).title(incident.getType()));
                     }
                 }
             }
         });
-
-        for (int i = 0; i<alIncident.size(); i++) {
-            LatLng marker = new LatLng(alIncident.get(i).getLatitude(), alIncident.get(i).getLongitude());
-            mMap.addMarker(new MarkerOptions().position(marker).title(alIncident.get(i).getType()));
-        }
     }
 }
